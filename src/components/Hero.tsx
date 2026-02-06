@@ -1,7 +1,6 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -27,13 +26,15 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            className="rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            size="lg"
-          >
-            Empieza ahora
-            <ArrowUpRight className="size-5 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Button>
+          <Link href="/sign-up">
+            <Button
+              className="rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              size="lg"
+            >
+              Empieza ahora
+              <ArrowUpRight className="size-5 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Button>
+          </Link>
         </div>
 
         {/* Stats or trust indicators */}
@@ -52,6 +53,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

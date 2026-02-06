@@ -1,10 +1,11 @@
 // imports
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
-export default function Navbar() {
+export default async function Navbar() {
+
+    // render return
     return (
         <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60">
             <div className="w-full max-w-7xl mx-auto px-6 xl:px-0">
@@ -59,16 +60,6 @@ export default function Navbar() {
                                     }}
                                 />
                             </SignedIn>
-
-                            <Button
-                                asChild
-                                size="sm"
-                                className="rounded-full font-semibold shadow-sm hover:shadow-md transition-all duration-300"
-                            >
-                                <Link href="/sign-up">
-                                    Sign Up
-                                </Link>
-                            </Button>
                         </div>
                     </div>
                 </nav>

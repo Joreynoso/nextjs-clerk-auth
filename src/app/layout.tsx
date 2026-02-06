@@ -28,17 +28,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // render return
   return (
     <ClerkProvider>
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
         >
+          {/* Navbar */}
           <Navbar />
+
+          {/* Main content */}
           <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
             {children}
           </div>
+
+          {/* Screen size helper */}
           <ScreenSizeHelper />
+          
+          {/* Footer */}
           <Footer />
         </body>
       </html>
