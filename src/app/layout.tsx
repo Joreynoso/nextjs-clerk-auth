@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import ScreenSizeHelper from '@/components/ScreenSizeHelper';
+import Footer from '@/components/Footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,9 +38,8 @@ export default function RootLayout({
           <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
             {children}
           </div>
-
           <ScreenSizeHelper />
-
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

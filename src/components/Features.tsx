@@ -50,24 +50,50 @@ const features = [
 // Features component
 const Features = () => {
   return (
-    <div className="w-full flex min-h-screen items-center justify-center px-6 xl:px-0">
-      <div>
-        <h2 className="text-center font-semibold text-4xl tracking-tight sm:text-5xl">
-          Características
-        </h2>
-        <div className="w-full max-w-7xl mx-auto mt-10 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
+    <div className="relative w-full flex min-h-screen items-center justify-center px-6 xl:px-0 py-24">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-linear-to-b from-background via-muted/20 to-background pointer-events-none" />
+
+      <div className="relative z-10 w-full max-w-7xl">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <h2 className="font-bold text-4xl tracking-tight sm:text-5xl md:text-6xl bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+            Características
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Todo lo que necesitas para implementar autenticación profesional
+          </p>
+        </div>
+
+        {/* Features grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
             <div
-              className="flex flex-col rounded-xl border px-5 py-6"
+              className="group relative flex flex-col rounded-2xl border border-border bg-card px-6 py-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 overflow-hidden"
               key={feature.title}
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-muted">
-                <feature.icon className="size-5" />
+              {/* Hover gradient effect */}
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="relative z-10">
+                {/* Icon with gradient background */}
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300 shadow-sm">
+                  <feature.icon className="size-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                </div>
+
+                {/* Title */}
+                <h3 className="font-semibold text-xl mb-2 group-hover:text-primary transition-colors duration-300">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              <span className="font-semibold text-lg">{feature.title}</span>
-              <p className="mt-1 text-[15px] text-foreground/80">
-                {feature.description}
-              </p>
+
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </div>
           ))}
         </div>
