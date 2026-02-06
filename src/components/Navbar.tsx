@@ -1,7 +1,8 @@
 // imports
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignUp, UserButton } from "@clerk/nextjs";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
+import { Button } from './ui/button';
 
 export default async function Navbar() {
 
@@ -51,6 +52,19 @@ export default async function Navbar() {
 
                         {/* Auth Section */}
                         <div className="flex items-center gap-3">
+                            {/* Botones para usuarios no autenticados */}
+                            <SignedOut>
+                                <Button
+                                    asChild
+                                    size="sm"
+                                    className="rounded-full font-semibold shadow-sm hover:shadow-md transition-all duration-300"
+                                >
+                                    <Link href="/sign-up">
+                                        Sign Up
+                                    </Link>
+                                </Button>
+                            </SignedOut>
+                            {/* Botón de usuario autenticado */}
                             <SignedIn>
                                 <UserButton
                                     appearance={{
