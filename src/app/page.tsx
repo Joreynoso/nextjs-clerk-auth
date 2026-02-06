@@ -1,9 +1,12 @@
-import Image from "next/image"
+// import components
+import Features from '@/components/Features'
+import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col py-12">
-      Homepage
+    <div>
+      <Hero />
+      <Features />
     </div>
   )
 }

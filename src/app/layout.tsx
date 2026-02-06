@@ -3,8 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 // import components
-import Navbar from "../../components/Navbar";
+import Navbar from "../components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import ScreenSizeHelper from '@/components/ScreenSizeHelper';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,8 @@ export default function RootLayout({
           <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
             {children}
           </div>
+
+          <ScreenSizeHelper />
 
         </body>
       </html>

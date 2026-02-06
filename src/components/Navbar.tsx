@@ -6,7 +6,7 @@ export default function Navbar() {
 
     // render return
     return (
-        <div className="w-full  flex flex-col py-4 bg-sidebar border border-[#bcc0cc]">
+        <div className="w-full  flex flex-col py-4 bg-sidebar border border-[#bcc0cc] px-6 xl:px-0">
 
             <nav className="w-full max-w-7xl mx-auto flex items-center justify-between">
                 <span className="text-lg font-semibold">Clerk Auth Example</span>
